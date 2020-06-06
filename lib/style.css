@@ -1,0 +1,11 @@
+.raf-bar { display: flex; padding: 12px; background: white; border: none; border-radius: 5px; box-shadow: 0 0 3px 0 rgba(0,0,0,.1) }
+.raf-tag { color: white; padding: 5px 8px; border-radius: 3px; font-weight: bold; font-size: 13px; margin-right: 8px; }
+.raf-tag__span { margin-left: 8px; font-weight: bold; }
+
+.raf-input { position: relative; font-weight: 300; }
+.raf-input__input { border: none; height: 24px; }
+.raf-input__input:focus { outline: none; }
+.raf-input__dropdown { position: absolute;  top: 30px; z-index: 100; min-width: 200px; border-radius: 5px; overflow: hidden; box-shadow: 0 0 5px 0px rgba(0, 0, 0, .1) }
+.raf-input__option { padding: 6px 12px; background: white; cursor: pointer; user-select: none; }
+.raf-input__option:hover { background: #fafafa; }
+.raf-input__option.selected { background: #fafafa; }

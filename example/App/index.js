@@ -35,7 +35,7 @@ export default class App extends React.PureComponent {
   state = { value: [] }
   setValue = (value) => this.setState({ value })
 
-  getQuery = () => this.state.value.reduce((acc, item) => `${acc ? `${acc} AND ` : ''}${QUERY[item.type](item)}`, '')
+  getQuery = () => this.state.value.reduce((acc, item) => `${acc ? `${acc}\n  AND ` : ''}${QUERY[item.type](item)}`, '')
 
   render () {
     const { value } = this.state
@@ -53,8 +53,12 @@ export default class App extends React.PureComponent {
             onChange={this.setValue}
           />
         </div>
-        <div>
-          Query: <code>SELECT * FROM table {this.getQuery() !== '' ? `WHERE ${this.getQuery()}` : ''};</code>
+        
+        <div style={{ marginTop: 20 }}>
+          Query:
+          <pre style={{ background: '#ddd', padding: 12, borderRadius: 5, fontWeight: 400, fontFamily: 'monospace' }}>
+            SELECT * FROM table{this.getQuery() !== '' ? `\n  WHERE ${this.getQuery()}` : ''};
+          </pre>
         </div>
       </div>
     )
